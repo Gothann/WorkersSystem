@@ -14,11 +14,13 @@ public class EmployeeManager {
         this.employees.put(keyEmployee, employee);
     }
 
-    public void removeEmployee(Employee employee){
-        if(employees.containsKey(employee.getEmployeeID()))
-            employees.remove(employee.getEmployeeID());
-        else
+    public void removeEmployee(Employee employee) {
+        if (this.employees.containsKey(employee.getEmployeeID())) {
+            this.employees.remove(employee.getEmployeeID());
+        } else {
             System.out.println("Pracownik o takim ID nie istnieje");
+        }
+
     }
 
     public void updateEmployee(int employeeID, Employee newEmployee){
