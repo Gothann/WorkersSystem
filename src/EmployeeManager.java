@@ -23,13 +23,15 @@ public class EmployeeManager {
 
     }
 
-    public void updateEmployee(int employeeID, Employee newEmployee){
-        if(employees.containsKey(employeeID))
-        {
-            employees.put(employeeID,newEmployee);
-        }
-        else
+    public void updateEmployee(int employeeID, String newPosition, int newSalary) {
+        if (searchEmployeeByID(employeeID) != null){
+            Employee e = searchEmployeeByID(employeeID);
+            e.setPosition(newPosition);
+            e.setSalary(newSalary);
+        } else {
             System.out.println("Pracownik o takim ID nie istnieje");
+        }
+
     }
     public Employee searchEmployeeByID(int employeeID) {
         if(employees.containsKey(employeeID)){
