@@ -41,12 +41,15 @@ public class EmployeeManager {
             System.out.println("Nie znaleziono pracownika o danym ID");
            return null;
     }
-    public void listAllEmployees(){
-        ArrayList<Employee> employeeList = new ArrayList<>(employees.values());
-        for (Employee employee: employeeList
-             ) {
+    public void listAllEmployees() {
+        ArrayList<Employee> employeeList = new ArrayList(this.employees.values());
+        Iterator var2 = employeeList.iterator();
+
+        while(var2.hasNext()) {
+            Employee employee = (Employee)var2.next();
             System.out.println(employee);
         }
+
     }
     public HashSet<Employee> searchEmployeesByPosition(String position){
          HashSet<Employee> employeeList = new HashSet<>(employees.values());
